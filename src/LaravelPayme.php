@@ -22,8 +22,8 @@ class LaravelPayme
      */
     private function configure()
     {
-        if ($this->config->has('payme.')) {
-            foreach ($this->config->get('payme.') as $key => $value) {
+        if ($this->config->has('laravel-payme.')) {
+            foreach ($this->config->get('laravel-payme.') as $key => $value) {
                 $this->{$key} = $value;
             }
         }

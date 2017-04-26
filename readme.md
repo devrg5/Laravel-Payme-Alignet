@@ -1,4 +1,4 @@
-# Laravel Payme Alignet
+# Laravel Payme Alignet :credit_card:
 
 Este paquete está destinado para la integración de una manera más rápida y sencilla de la pasarela de pagos de Alignet.
 

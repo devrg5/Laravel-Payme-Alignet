@@ -8,5 +8,12 @@
             "email": "helmer290192@hotmail.com"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "LaravelPaymeAlignet\\": "src/"
+        }
+    },
+    "require": {
+        "illuminate/support": "^5.4"
+    }
 }

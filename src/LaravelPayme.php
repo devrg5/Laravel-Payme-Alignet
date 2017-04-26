@@ -59,7 +59,8 @@ class LaravelPayme
 
             $user = $client->RegisterCardHolder($params);
 
-            return $user->codAsoCardHolderWallet;
+            return $user;
+
         } catch (\Exception $e) {
             return false;
         }

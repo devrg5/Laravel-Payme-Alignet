@@ -9,8 +9,8 @@ class LaravelPayme
     private $config;
     private $url;
     private $acquirer_id;
-    private $commerce_id;
-    private $commerce_secret_key;
+    private $wallet_commerce_id;
+    private $wallet_commerce_secret;
 
     public function __construct(Repository $config)
     {
@@ -44,10 +44,10 @@ class LaravelPayme
 
             $client = new \SoapClient($this->url);
 
-            $registerVerification = openssl_digest("{$this->commerce_id}{$userId}{$emailUser}{$this->commerce_secret_key}", 'sha512');
+            $registerVerification = openssl_digest("{$this->wallet_commerce_id}{$userId}{$emailUser}{$this->wallet_commerce_secret}", 'sha512');
 
             $userParams = [
-                'idEntCommerce'         => $this->commerce_id,
+                'idEntCommerce'         => $this->wallet_commerce_id,
                 'codCardHolderCommerce' => $userId,
                 'names'                 => $nameUser,
                 'lastNames'             => is_null($lastnameUser) ? $nameUser : $lastnameUser,

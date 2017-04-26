@@ -1,8 +1,8 @@
 <?php
 
 return [
-    'url'                 => env('PAYME_URL'),
-    'commerce_id'         => env('PAYME_COMMERCE_ID'),
-    'commerce_secret_key' => env('PAYME_COMMERCE_SECRET'),
-    'acquirer_id'         => env('PAYME_ACQUIRER_ID'),
+    'url'                    => env('PAYME_URL'),
+    'acquirer_id'            => env('PAYME_ACQUIRER_ID'),
+    'wallet_commerce_id'     => env('PAYME_WALLET_COMMERCE_ID'),
+    'wallet_commerce_secret' => env('PAYME_WALLET_COMMERCE_SECRET'),
 ];

@@ -10,7 +10,7 @@ class LaravelPaymeAlignetServiceProvider extends ServiceProvider
     public function boot()
     {
         $this->publishes([
-            __DIR__ . '../config/laravel-payme-alignet.php' => config_path('laravel-payme-alignet.php'),
+            __DIR__ . '/../config/laravel-payme-alignet.php' => config_path('laravel-payme-alignet.php'),
         ], 'laravel.payme.config');
     }
 

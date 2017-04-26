@@ -19,7 +19,24 @@ Agrega el Facade a la lista de alias en `config/app.php`
     ]
 ```
 
-### ToDo
+### Colocar las variables de entorno
+Este paquete usa su configuración interna, la cual siempre apunta al archivo interno `laravel-payme.php`.
+Necesitas configurar de siguientes variables en tu archivo `.env`
+```ini
+PAYME_URL=
+PAYME_ACQUIRER_ID=
+PAYME_WALLET_COMMERCE_ID=
+PAYME_WALLET_COMMERCE_SECRET=
+```
+
+## Uso
+### Registrar u obtener usuario en Payme
+```php
+use LaravelPayme;
+
+LaravelPayme::registerUser($userId, $emailUser, $nameUser, $lastnameUser = null, array $moreData = []);
+```
+
+### Pendientes
 - Add config publication docs
-- Add environment docs
 - Add english readme

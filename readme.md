@@ -18,3 +18,8 @@ Agrega el Facade a la lista de alias en `config/app.php`
         'LaravelPayme' => LaravelPaymeAlignet\Facades\LaravelPayme::class,   
     ]
 ```
+
+### ToDo
+- Add config publication docs
+- Add environment docs
+- Add english readme

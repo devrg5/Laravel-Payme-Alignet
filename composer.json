@@ -1,12 +1,19 @@
 {
-    "name": "helmer/laravel-alignet-payme",
+    "name": "helmerdavila/laravel-alignet-payme",
     "description": "Integra Payme en tu proyecto de Laravel",
     "type": "library",
     "authors": [
         {
             "name": "Helmer",
-            "email": "helmer290192@hotmail.com"
+            "email": "info@helmer.me"
         }
     ],
-    "require": {}
+    "autoload": {
+        "psr-4": {
+            "LaravelPaymeAlignet\\": "src/"
+        }
+    },
+    "require": {
+        "illuminate/support": "^5.4"
+    }
 }

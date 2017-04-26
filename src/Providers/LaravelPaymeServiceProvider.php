@@ -5,7 +5,7 @@ namespace LaravelPaymeAlignet\Providers;
 use Illuminate\Support\ServiceProvider;
 use LaravelPaymeAlignet\LaravelPayme;
 
-class LaravelPaymeAlignetServiceProvider extends ServiceProvider
+class LaravelPaymeServiceProvider extends ServiceProvider
 {
     public function boot()
     {

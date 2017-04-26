@@ -7,7 +7,7 @@ Registra el Service Provider de esta aplicación en `config/app.php`
 ```php
     'providers' => [
         // ... Otros providers aquí
-        LaravelPaymeAlignet\Providers\LaravelPaymeAlignetServiceProvider::class,   
+        LaravelPaymeAlignet\Providers\LaravelPaymeServiceProvider::class,   
     ]
 ```
 

@@ -37,7 +37,14 @@ PAYME_CURRENCY_CODE=
 ```php
 use LaravelPayme;
 
-LaravelPayme::registerUser($userId, $emailUser, $nameUser, $lastnameUser = null, array $moreData = []);
+LaravelPayme::registerUser($userId, $emailUser, $nameUser, $lastnameUser, array $moreData = []);
+```
+
+### Crear una orden de compra en Payme
+```php
+use LaravelPayme;
+
+LaravelPayme::generatePaymentOrderByTokenUser($tokenUser, $purchaseUniqueId, $purchaseTotal);
 ```
 
 ### Pendientes

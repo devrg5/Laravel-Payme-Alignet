@@ -9,8 +9,11 @@ class LaravelPayme
     private $config;
     private $url;
     private $acquirer_id;
+    private $currency_code;
+    private $commerce_id;
     private $wallet_commerce_id;
     private $wallet_commerce_secret;
+    private $vpos_secret_key;
 
     public function __construct(Repository $config)
     {
@@ -64,5 +67,27 @@ class LaravelPayme
         } catch (\Exception $e) {
             return false;
         }
+    }
+
+    /**
+     * Generate a payment order by token user
+     *
+     * @param null $tokenUser
+     * @param int $purchaseUniqueId
+     * @param float $purchaseTotal
+     * @return bool|string
+     */
+    public function generatePaymentOrderByTokenUser($tokenUser = null, $purchaseUniqueId = 0, $purchaseTotal = 0.0)
+    {
+        if (is_null($tokenUser)) {
+            return false;
+        }
+
+        $purchaseOperationNumber = sprintf('%06d', $purchaseUniqueId);
+        $purchaseAmount = intval($purchaseTotal * 100);
+
+        $purchaseVerificationCode = openssl_digest($this->acquirer_id . $this->commerce_id . $purchaseOperationNumber . $purchaseAmount . $this->currency_code . $this->vpos_secret_key, 'sha512');
+
+        return $purchaseVerificationCode;
     }
 }

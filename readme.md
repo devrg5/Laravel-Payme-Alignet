@@ -27,6 +27,9 @@ PAYME_URL=
 PAYME_ACQUIRER_ID=
 PAYME_WALLET_COMMERCE_ID=
 PAYME_WALLET_COMMERCE_SECRET=
+PAYME_COMMERCE_ID=
+PAYME_VPOS_SECRET_KEY=
+PAYME_CURRENCY_CODE=
 ```
 
 ## Uso
@@ -34,7 +37,14 @@ PAYME_WALLET_COMMERCE_SECRET=
 ```php
 use LaravelPayme;
 
-LaravelPayme::registerUser($userId, $emailUser, $nameUser, $lastnameUser = null, array $moreData = []);
+LaravelPayme::registerUser($userId, $emailUser, $nameUser, $lastnameUser, array $moreData = []);
+```
+
+### Crear una orden de compra en Payme
+```php
+use LaravelPayme;
+
+LaravelPayme::generatePaymentOrderByTokenUser($tokenUser, $purchaseUniqueId, $purchaseTotal);
 ```
 
 ### Pendientes
